@@ -48,7 +48,7 @@ public class SistemaRotasApplication implements ApplicationRunner {
 		passageiros.add(passageiro1);
 		passageiros.add(passageiro2);
 
-		Trajeto trajeto1 = new Trajeto("15°47'56.0\"S 47°51'38.0\"W", "22°57′07″S 43°12′38″W", paradas, passageiros);
+		Trajeto trajeto1 = new Trajeto("15°47'56.0\"S 47°51'38.0\"W", "22°57′07\″S 43°12′38\″W", paradas, passageiros);
 		trajeto1 = trajetoRepository.save(trajeto1);
 
 		// Instanciando a conta

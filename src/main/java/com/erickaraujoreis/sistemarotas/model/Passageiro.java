@@ -20,7 +20,10 @@ public class Passageiro {
 	private String nome;
 
 	@Column(length = 20, nullable = false)
-	private String endereco;
+	private double enderecoLat;
+
+	@Column(length = 20, nullable = false)
+	private double enderecoLon;
 
 	@ManyToOne
 	@JoinColumn(name = "id_trajeto", nullable = false)
@@ -30,8 +33,9 @@ public class Passageiro {
 	@JoinColumn(name = "id_conta", nullable = false)
 	private Conta conta;
 
-	public Passageiro(String nome, String endereco){
+	public Passageiro(String nome, double enderecoLat, double enderecoLon){
 		this.nome = nome;
-		this.endereco = endereco;
+		this.enderecoLat = enderecoLat;
+		this.enderecoLon = enderecoLon;
 	}
 }

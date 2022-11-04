@@ -26,6 +26,10 @@ public class Passageiro {
 	@JoinColumn(name = "id_trajeto", nullable = false)
 	private Trajeto trajeto;
 
+	@ManyToOne
+	@JoinColumn(name = "id_conta", nullable = false)
+	private Conta conta;
+
 	public Passageiro(String nome, String endereco){
 		this.nome = nome;
 		this.endereco = endereco;

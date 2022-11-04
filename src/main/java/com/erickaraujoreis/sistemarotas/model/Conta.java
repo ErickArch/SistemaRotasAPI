@@ -24,20 +24,20 @@ public class Conta {
 	@Column(length = 50, nullable = false)
 	private String email;
 
-	@Column(length = 20, nullable = false)
-	private String telefone;
-
 	@Column(length = 30, nullable = false)
 	private String senha;
 
 	@OneToMany
 	private List<Trajeto> trajetos = new ArrayList<Trajeto>();
 
-	public Conta(String nome, String email, String telefone, String senha, List<Trajeto> trajetos){
+	@OneToMany
+	private List<Passageiro> passageiros = new ArrayList<Passageiro>();
+
+	public Conta(String nome, String email, String senha, List<Trajeto> trajetos, List<Passageiro> passageiros){
 		this.nome = nome;
 		this.email = email;
-		this.telefone = telefone;
 		this.senha = senha;
 		this.trajetos = trajetos;
+		this.passageiros = passageiros;
 	}
 }

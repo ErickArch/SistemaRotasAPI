@@ -19,13 +19,16 @@ public class Trajeto {
 	private Long id;
 
 	@Column(length = 20, nullable = false)
-	private String pontoPartida;
+	private double pontoPartidaLat;
 
 	@Column(length = 20, nullable = false)
-	private String pontoChegada;
+	private double pontoPartidaLon;
 
 	@Column(length = 20, nullable = false)
-	private List<String> paradas;
+	private double pontoChegadaLat;
+
+	@Column(length = 20, nullable = false)
+	private double pontoChegadaLon;
 
 	@OneToMany
 	private List<Passageiro> passageiros = new ArrayList<Passageiro>();
@@ -34,10 +37,11 @@ public class Trajeto {
 	@JoinColumn(name = "id_conta", nullable = false)
 	private Conta conta;
 
-	public Trajeto(String pontoPartida, String pontoChegada, List<String> paradas, List<Passageiro> passageiros){
-		this.pontoPartida = pontoPartida;
-		this.pontoChegada = pontoChegada;
-		this.paradas = paradas;
+	public Trajeto(double pontoPartidaLat, double pontoPartidaLon, double pontoChegadaLat, double pontoChegadaLon, List<Passageiro> passageiros){
+		this.pontoPartidaLat = pontoPartidaLat;
+		this.pontoPartidaLon = pontoPartidaLon;
+		this.pontoChegadaLat = pontoChegadaLat;
+		this.pontoChegadaLon = pontoChegadaLon;
 		this.passageiros = passageiros;
 	}
 }

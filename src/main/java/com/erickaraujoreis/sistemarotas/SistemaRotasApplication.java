@@ -34,28 +34,27 @@ public class SistemaRotasApplication implements ApplicationRunner {
 	@Override
 	public void run(ApplicationArguments args) throws Exception{
 		// Instanciando os passageiros
-		Passageiro passageiro1 = new Passageiro("João Souza", "15°47'56.0\"S 47°51'38.0\"W");
-		Passageiro passageiro2 = new Passageiro("Aline Almeida", "c");
+		Passageiro passageiro1 = new Passageiro("João Souza", -19.851616300183196, -43.955840012372015);
+		Passageiro passageiro2 = new Passageiro("Aline Almeida", -22.820454154695202, -43.086546873376);
 		passageiro1 = passageiroRepository.save(passageiro1);
 		passageiro2 = passageiroRepository.save(passageiro2);
 
 		// Instanciando o trajeto
-		List<String> paradas = new ArrayList<>();
-		paradas.add("15°47'56.0\"S 47°51'38.0\"W");
-		paradas.add("15°47'56.0\"S 47°51'38.0\"W");
-
 		List<Passageiro> passageiros = new ArrayList<>();
 		passageiros.add(passageiro1);
 		passageiros.add(passageiro2);
 
-		Trajeto trajeto1 = new Trajeto("15°47'56.0\"S 47°51'38.0\"W", "22°57′07\″S 43°12′38\″W", paradas, passageiros);
+		Trajeto trajeto1 = new Trajeto(-22.73941911532092, -47.096556298128576, -15.584640226722062, -47.75573592959476, passageiros);
 		trajeto1 = trajetoRepository.save(trajeto1);
 
 		// Instanciando a conta
-		List<Trajeto> trajetos = new ArrayList<>();
-		trajetos.add(trajeto1);
+		List<Trajeto> trajetosConta = new ArrayList<>();
+		List<Passageiro> passageirosConta = new ArrayList<>();
+		trajetosConta.add(trajeto1);
+		passageirosConta.add(passageiro1);
+		passageirosConta.add(passageiro2);
 
-		Conta conta1 = new Conta("Felipe Santos", "felipesantos@email.com", "12912345678", "12345678", trajetos);
+		Conta conta1 = new Conta("Felipe Santos", "felipesantos@email.com", "12912345678", trajetosConta, passageirosConta);
 	}
 
 }

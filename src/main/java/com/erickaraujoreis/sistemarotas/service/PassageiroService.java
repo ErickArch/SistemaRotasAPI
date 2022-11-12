@@ -3,10 +3,12 @@ package com.erickaraujoreis.sistemarotas.service;
 import com.erickaraujoreis.sistemarotas.model.Passageiro;
 import com.erickaraujoreis.sistemarotas.repository.PassageiroRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
+@Service
 public class PassageiroService {
 	@Autowired
 	PassageiroRepository passageiroRepository;

@@ -55,6 +55,7 @@ public class SistemaRotasApplication implements ApplicationRunner {
 		passageirosConta.add(passageiro2);
 
 		Conta conta1 = new Conta("Felipe Santos", "felipesantos@email.com", "12912345678", trajetosConta, passageirosConta);
+		conta1 = contaRepository.save(conta1);
 	}
 
 }

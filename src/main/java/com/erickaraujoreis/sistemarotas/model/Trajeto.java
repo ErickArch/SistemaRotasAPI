@@ -34,7 +34,7 @@ public class Trajeto {
 	private List<Passageiro> passageiros = new ArrayList<Passageiro>();
 
 	@ManyToOne
-	@JoinColumn(name = "id_conta", nullable = false)
+	@JoinColumn(name = "id_conta")
 	private Conta conta;
 
 	public Trajeto(double pontoPartidaLat, double pontoPartidaLon, double pontoChegadaLat, double pontoChegadaLon, List<Passageiro> passageiros){

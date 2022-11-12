@@ -26,11 +26,11 @@ public class Passageiro {
 	private double enderecoLon;
 
 	@ManyToOne
-	@JoinColumn(name = "id_trajeto", nullable = false)
+	@JoinColumn(name = "id_trajeto")
 	private Trajeto trajeto;
 
 	@ManyToOne
-	@JoinColumn(name = "id_conta", nullable = false)
+	@JoinColumn(name = "id_conta")
 	private Conta conta;
 
 	public Passageiro(String nome, double enderecoLat, double enderecoLon){
